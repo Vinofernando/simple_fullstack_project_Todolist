@@ -10,7 +10,7 @@ const token = localStorage.getItem("token");
 // jika tidak ada token, redirect
 if (!token) {
   localStorage.removeItem("token")
-  window.location.href = "index.html";
+  window.location.href = "login.html";
 }
 
 function deleteTodo(id){
@@ -114,7 +114,7 @@ addBtn.addEventListener("click", () => {
 logOut.addEventListener('click', () => {
   if(!confirm(`Yakin ingin logout ? `)) return ;
   localStorage.removeItem("token")
-  window.location.href = "index.html"
+  window.location.href = "login.html"
 })
 // Jalankan pertama kali
 

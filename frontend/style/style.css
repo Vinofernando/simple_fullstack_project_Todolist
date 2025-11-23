@@ -30,6 +30,23 @@ input {
   border: 1px solid #ccc;
 }
 
+.option{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.option a{
+  text-decoration: none;
+  color: rgb(172 176 179 / 71%);
+  font-size: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+.option a:hover{
+  color: rgb(172 176 179 / 100%);
+}
 button {
   width: 100%;
   background: blue;
