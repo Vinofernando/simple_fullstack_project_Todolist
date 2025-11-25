@@ -28,7 +28,7 @@ router.post("/", authenticateToken, async (req, res) => {
     const { todos } = req.body;
 
     const duplicate = await pool.query(`
-        SELECT (user_id, todos) from todos
+        SELECT * from todos
         WHERE user_id = $1 AND todos = $2
       `, [userId, todos])
 

@@ -51,7 +51,7 @@ router.post('/register', async(req, res) => {
           from: process.env.EMAIL_USER,
           to: email,
           subject: `Verifikasi email anda`,
-          html: `<p>Klik link berikut untuk verifikasi akun:</p><a href=${link}>${link}></a>`
+          html: `<p>Klik link berikut untuk verifikasi akun:</p><a href=${link}>${link}</a>`
         })
 
         res.json({pesan : `Registrasi berhasil, cek email anda untuk verifikasi`})
@@ -94,7 +94,7 @@ router.post('/login', async (req, res) => {
   user: {
     id : user.user_id,
     username : user.username,
-    email : user.email
+    email : user.user_email
   }
 })
 
