@@ -16,7 +16,7 @@ if (!token) {
 function deleteTodo(id){
   if(!confirm("Yakin ingin menghapus todo ini ? ")) return ;
 
-  fetch(`http://localhost:5000/api/todos/${id}`, {
+  fetch(`http://localhost:5000/todos/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`
@@ -56,7 +56,7 @@ function loadUsers (){
 
 // 🔥 Fungsi ambil dan tampilkan todos
 function loadTodos() {
-  fetch("http://localhost:5000/api/todos", {
+  fetch("http://localhost:5000/todos", {
     headers: {
       "Authorization": `Bearer ${token}`
     }
@@ -95,7 +95,7 @@ addBtn.addEventListener("click", () => {
 
   if (!todos) return alert("Tulis judul dulu!");
 
-  fetch("http://localhost:5000/api/todos", {
+  fetch("http://localhost:5000/todos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
