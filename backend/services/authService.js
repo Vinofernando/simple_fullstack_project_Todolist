@@ -31,11 +31,11 @@ export const loginUser = async ({ email, password }) => {
   const user = userResult.rows[0]
   const validPassword = await bcrypt.compare(password, user.user_password)
   if(!validPassword) throw { status: 400, message: 'Password salah' }
-
+  if(!user.verified) throw { status: 400, message: 'Email belum di verifikasi' }
   const token = jwt.sign({ id: user.user_id, email: user.user_email }, JWT_SECRET, { expiresIn: '1h' })
 
   return {
-    message: 'Login berhasil',
+    message: `Login berhasil ${user.verified}`,
     token,
     user: { id: user.user_id, username: user.username, email: user.user_email } // perbaikan: user_email
   }
