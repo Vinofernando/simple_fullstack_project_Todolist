@@ -19,3 +19,4 @@ app.use('/auth', verifyRoutes)
 app.use(errorHandler)
 
 export default app
+
