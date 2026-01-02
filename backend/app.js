@@ -8,15 +8,13 @@ import verifyRoutes from './routes/verifyRoutes.js'
 
 
 const app = express()
-app.use(cors({
-    origin: "https://simple-fullstack-todolist.netlify.app"
-}))
+app.use(cors())
 app.use(express.json())
 
 app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
 app.use('/todos', todoRoutes)
-app.use('/auth/verify', verifyRoutes)
+app.use('/auth', verifyRoutes)
 
 app.get('/', (req, res) => {
   res.send('API is running')

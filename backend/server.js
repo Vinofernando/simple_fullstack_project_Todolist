@@ -10,7 +10,7 @@ import pool from "./config/db.js"; // sesuaikan path
 (async () => {
   try {
     await pool.query("SELECT 1");
-    console.log("✅ Database Supabase CONNECTED");
+    console.log("✅ Database local postgres CONNECTED");
   } catch (error) {
     console.error("❌ Database connection FAILED");
     console.error(error.message);
